@@ -341,6 +341,22 @@
 
     .location-info .hours strong { color: var(--green-dark); }
 
+    .order-btn {
+      display: block;
+      background: var(--peach);
+      color: var(--green-dark);
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1.3rem;
+      padding: 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-bottom: 12px;
+      transition: background .2s;
+    }
+
+    .order-btn:hover { background: #ffb3a0; }
+
     .phone-btn {
       display: block;
       background: var(--green-mid);
@@ -421,24 +437,6 @@
       .location-info .hours { grid-template-columns: 1fr; }
     }
   </style>
-
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '7193326380760686');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=7193326380760686&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -509,9 +507,9 @@
   <!-- ── TESTIMONIAL ────────────────────────────────────── -->
   <section class="testimonial">
     <blockquote>
-      "Ever since I found this place, I come every morning. The café con leche reminds me of my mom's, and everyone here is so kind... I feel right at home."
+      "Best coffee / cafe in the area! We drive from 45 minutes away just for the coffee and food. The sandwiches, açaí bowls and con leche are to die for! They never miss a beat, small family owned business doing it better than the big guys could ever dream of."
     </blockquote>
-    <cite>— Maria R., weekly regular</cite>
+    <cite>— J.M. ⭐⭐⭐⭐⭐ Google Review</cite>
   </section>
 
   <!-- ── LOCATION ───────────────────────────────────────── -->
@@ -531,6 +529,7 @@
           <strong>Monday – Friday</strong> <span>8:00 am – 3:00 pm</span>
           <strong>Saturday – Sunday</strong> <span>Closed</span>
         </div>
+        <a href="https://www.gracecafe.co" target="_blank" class="order-btn">🛒 Order Now</a>
         <a href="tel:+13526032833" class="phone-btn">📞 Call Us: (352) 603-2833</a>
         <a href="https://www.google.com/maps/search/Grace+Cafe+407+N+West+St+Bushnell+FL+33513" target="_blank" class="directions-btn">🗺️ View on Google Maps</a>
       </div>
