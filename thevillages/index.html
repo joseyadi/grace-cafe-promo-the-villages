@@ -436,6 +436,127 @@
       .chalkboard { padding: 36px 24px; }
       .location-info .hours { grid-template-columns: 1fr; }
     }
+
+    /* ── REVIEWS GRID ────────────────────────────────────── */
+    .reviews {
+      background: var(--green-dark);
+      color: var(--chalk-text);
+      padding: 60px 24px;
+      text-align: center;
+    }
+
+    .reviews h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: var(--peach);
+      margin-bottom: 40px;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .review-card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: left;
+    }
+
+    .review-card blockquote {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-style: italic;
+      line-height: 1.7;
+      opacity: 0.92;
+      margin-bottom: 16px;
+    }
+
+    .review-card cite {
+      font-family: var(--font-chalk);
+      font-size: 1.1rem;
+      color: var(--peach);
+    }
+
+    @media (max-width: 640px) {
+      .reviews-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── LEAD CAPTURE FORM ───────────────────────────────── */
+    .lead-form-wrap {
+      margin-top: 20px;
+      border-top: 1px dashed rgba(255,255,255,0.2);
+      padding-top: 20px;
+    }
+
+    .lead-form-wrap .form-intro {
+      font-family: 'Caveat', cursive;
+      font-size: 1.15rem;
+      color: #ffc9b9;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .lead-form input {
+      display: block;
+      width: 100%;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      border-radius: 30px;
+      border: 2px solid var(--green-mid);
+      background: rgba(255,255,255,0.08);
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color .2s;
+    }
+
+    .lead-form input::placeholder { color: rgba(254,254,227,0.5); }
+    .lead-form input:focus { border-color: var(--peach); }
+
+    .lead-form .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 50px;
+      background: var(--amber);
+      color: #fff;
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background .2s;
+      margin-top: 4px;
+    }
+
+    .lead-form .submit-btn:hover { background: #b8742e; }
+
+    .confirmation-ticket {
+      background: #2a7a4b;
+      border: 2px dashed var(--peach);
+      border-radius: 16px;
+      padding: 24px 20px;
+      margin-top: 4px;
+      font-family: var(--font-chalk);
+      font-size: 1.25rem;
+      color: var(--cream);
+      line-height: 1.7;
+      display: none;
+    }
+
+    .form-error {
+      color: #ff9999;
+      font-family: var(--font-chalk);
+      font-size: 1rem;
+      margin-top: 8px;
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -455,10 +576,16 @@
       <div class="drink-name">Café con Leche</div>
       <div class="condition">with the purchase of any sandwich<br><span style="font-size:1rem; opacity:0.75;">on your first visit</span></div>
       <span class="cup">☕</span>
-      <div style="margin-top:20px; border-top: 1px dashed rgba(255,255,255,0.2); padding-top:16px;">
-        <p style="font-family:'Caveat',cursive; font-size:1.15rem; color:#ffc9b9; line-height:1.5;">
-          📸 Take a screenshot of this offer<br>and show it to the cashier to redeem it!
-        </p>
+      <div class="lead-form-wrap">
+        <p class="form-intro">Claim your free Café con Leche — enter your info and show the confirmation screen to the cashier on your first visit.</p>
+        <form class="lead-form" id="claimForm">
+          <input type="text" id="firstName" placeholder="Your first name" />
+          <input type="email" id="email" placeholder="Your email address" />
+          <input type="tel" id="phone" placeholder="Your phone number (optional)" />
+          <button type="submit" class="submit-btn">☕ Claim My Free Café con Leche</button>
+          <p class="form-error" id="formError">Something went wrong. Please try again.</p>
+        </form>
+        <div class="confirmation-ticket" id="confirmationTicket"></div>
       </div>
     </div>
   </section>
@@ -504,12 +631,27 @@
     </div>
   </section>
 
-  <!-- ── TESTIMONIAL ────────────────────────────────────── -->
-  <section class="testimonial">
-    <blockquote>
-      "Best coffee / cafe in the area! We drive from 45 minutes away just for the coffee and food. The sandwiches, açaí bowls and con leche are to die for! They never miss a beat, small family owned business doing it better than the big guys could ever dream of."
-    </blockquote>
-    <cite>— J.M. ⭐⭐⭐⭐⭐ Google Review</cite>
+  <!-- ── REVIEWS GRID ───────────────────────────────────── -->
+  <section class="reviews">
+    <h2>⭐ What our guests are saying</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <blockquote>"Best coffee / cafe in the area! We drive from 45 minutes away just for the coffee and food. The sandwiches, açaí bowls and con leche are to die for! They never miss a beat, small family owned business doing it better than the big guys could ever dream of."</blockquote>
+        <cite>— J.M. ⭐⭐⭐⭐⭐ Google Review</cite>
+      </div>
+      <div class="review-card">
+        <blockquote>"What an adorable unexpected cute cafe! Great atmosphere, quick and easy service, super friendly. Very clean. Good prices. Great flavor. I got the avocado sandwich and watermelon lemonade. Thank you so much!"</blockquote>
+        <cite>— Valentina I. ⭐⭐⭐⭐⭐ Google Review · Local Guide</cite>
+      </div>
+      <div class="review-card">
+        <blockquote>"Came here for a coffee, left with a full belly. Quiet and calm atmosphere and a smile as you walk through the door. You feel part of the family when you eat here."</blockquote>
+        <cite>— Dylan C. ⭐⭐⭐⭐⭐ Google Review</cite>
+      </div>
+      <div class="review-card">
+        <blockquote>"Stopped in after reading a recent article about them. The Cuban sandwich was amazing — the bread spot-on from La Segunda, pork and ham abundant. Hot, crispy, pressed nicely, and downright delish!"</blockquote>
+        <cite>— M.R.S. ⭐⭐⭐⭐⭐ Google Review · Local Guide</cite>
+      </div>
+    </div>
   </section>
 
   <!-- ── LOCATION ───────────────────────────────────────── -->
@@ -550,6 +692,50 @@
     <a href="https://www.google.com/maps/search/Grace+Cafe+407+N+West+St+Bushnell+FL+33513"
        target="_blank"                                                 class="visit">📍 Get Directions</a>
   </div>
+
+
+  <script>
+    document.getElementById('claimForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const firstName = document.getElementById('firstName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const errorEl = document.getElementById('formError');
+      const ticketEl = document.getElementById('confirmationTicket');
+
+      errorEl.style.display = 'none';
+
+      if (!firstName || !email) {
+        errorEl.textContent = 'Please fill in your name and email.';
+        errorEl.style.display = 'block';
+        return;
+      }
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            access_key: '37f65324-7e12-4f75-b225-bd66e99ec9d4',
+            subject: 'New Free Café con Leche Claim — Grace Cafe',
+            from_name: 'Grace Cafe Promo Page',
+            firstName, email, phone
+          })
+        });
+
+        if (res.ok) {
+          document.getElementById('claimForm').style.display = 'none';
+          ticketEl.innerHTML = `✅ ¡You're in, ${firstName}!<br><br>Show this screen to our cashier on your first visit and your Café con Leche is on us. We can't wait to meet you! ☕<br><br>— The Grace Cafe Family`;
+          ticketEl.style.display = 'block';
+        } else {
+          throw new Error('Server error');
+        }
+      } catch {
+        errorEl.textContent = 'Something went wrong. Please try again.';
+        errorEl.style.display = 'block';
+      }
+    });
+  </script>
 
 </body>
 </html>
