@@ -34,7 +34,7 @@
     .hero {
       background: linear-gradient(135deg, #1a3d28 0%, #2c6e49 55%, #4c956c 100%);
       color: var(--chalk-text);
-      padding: 60px 24px 80px;
+      padding: 60px 24px 72px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -48,6 +48,7 @@
       pointer-events: none;
     }
 
+    /* Accent badge — Caveat OK here, short decorative text */
     .hero-badge {
       display: inline-block;
       background: var(--peach);
@@ -61,23 +62,25 @@
       margin-bottom: 20px;
     }
 
+    /* [Typography] Switched hero h1 to Lora for authority + readability */
     .hero h1 {
-      font-family: var(--font-chalk);
-      font-size: clamp(2.8rem, 8vw, 5rem);
-      line-height: 1.1;
-      margin-bottom: 16px;
-      text-shadow: 2px 3px 6px rgba(0,0,0,0.4);
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      line-height: 1.25;
+      margin-bottom: 18px;
+      text-shadow: 1px 2px 6px rgba(0,0,0,0.3);
     }
 
     .hero h1 span { color: var(--peach); }
 
     .hero p {
       font-family: var(--font-serif);
-      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
       max-width: 520px;
-      margin: 0 auto 36px;
-      opacity: 0.9;
-      line-height: 1.6;
+      margin: 0 auto 32px;
+      opacity: 0.92;
+      line-height: 1.8; /* [Typography] Improved line-height for 50+ readability */
     }
 
     .hero-cta {
@@ -87,7 +90,7 @@
       font-family: var(--font-serif);
       font-weight: 700;
       font-size: 1.2rem;
-      padding: 16px 40px;
+      padding: 18px 44px; /* [Mobile] Slightly larger tap target */
       border-radius: 50px;
       text-decoration: none;
       box-shadow: 0 6px 20px rgba(0,0,0,0.3);
@@ -96,11 +99,152 @@
 
     .hero-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,0.35); }
 
+    /* [Trust] Added trust signals row below hero CTA */
+    .trust-signals {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 24px;
+      margin-top: 28px;
+    }
+
+    .trust-signals span {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      color: rgba(254,254,227,0.85);
+      white-space: nowrap;
+    }
+
+    /* ── FOOD PHOTOS ─────────────────────────────────────── */
+    /* [Structure] Food section moved BEFORE the promo offer */
+    .features {
+      background: var(--cream);
+      padding: 64px 24px 56px;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--green-dark);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .features h2 span { color: var(--amber); }
+
+    /* [Typography] Added subtitle under food section heading */
+    .features-subtitle {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: #5a7a65;
+      margin-bottom: 44px;
+      line-height: 1.7;
+    }
+
+    .food-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      justify-content: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* [Food Cards] Slightly improved shadow and border for visual weight */
+    .food-card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 6px 28px rgba(44,110,73,0.16);
+      border: 1px solid rgba(44,110,73,0.08);
+      overflow: hidden;
+      flex: 1 1 260px;
+      max-width: 300px;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .food-card:hover { transform: translateY(-7px); box-shadow: 0 16px 40px rgba(44,110,73,0.22); }
+
+    .food-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .food-card-body {
+      padding: 22px 22px 28px;
+    }
+
+    .food-card-body h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--green-dark);
+      margin-bottom: 8px;
+    }
+
+    /* [Typography] Kept serif but improved line-height; removed italic for easier scanning */
+    .food-card-body p {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: #4a6655;
+      line-height: 1.75;
+    }
+
+    /* ── SECONDARY CTA BANNER (after food, before offer) ─── */
+    /* [Structure] New section: user sees food first, then gets the offer */
+    .secondary-cta {
+      background: linear-gradient(135deg, var(--amber) 0%, #c47830 100%);
+      padding: 44px 24px;
+      text-align: center;
+    }
+
+    .secondary-cta .pre-line {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .secondary-cta h3 {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      color: #fff;
+      line-height: 1.35;
+      max-width: 600px;
+      margin: 0 auto 24px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.15);
+    }
+
+    .secondary-cta h3 span {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .secondary-cta-btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--amber);
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1.15rem;
+      padding: 16px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .secondary-cta-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+
     /* ── CHALKBOARD PROMO ────────────────────────────────── */
+    /* [Structure] Promo moved AFTER food section */
     .promo-wrap {
       display: flex;
       justify-content: center;
-      padding: 56px 24px;
+      padding: 60px 24px;
       background: #edf5e8;
     }
 
@@ -111,13 +255,14 @@
       box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 0 60px rgba(255,255,255,0.02);
       padding: 48px 56px;
       text-align: center;
-      max-width: 540px;
+      max-width: 560px;
       width: 100%;
       position: relative;
     }
 
+    /* [Offer Clarity] Caveat kept here — short decorative accent label */
     .chalkboard::after {
-      content: "🍽️ Special Offer";
+      content: "🍽️ Special Offer — First Visit Only";
       position: absolute;
       top: -20px;
       left: 50%;
@@ -126,156 +271,178 @@
       color: var(--cream);
       font-family: var(--font-chalk);
       font-size: 1rem;
-      padding: 4px 18px;
+      padding: 4px 20px;
       border-radius: 20px;
       white-space: nowrap;
     }
 
     .chalkboard .free {
       font-family: var(--font-chalk);
-      font-size: clamp(3rem, 10vw, 4.5rem);
+      font-size: clamp(3.5rem, 11vw, 5rem); /* [Offer Clarity] Slightly larger */
       color: var(--peach);
       text-shadow: 2px 2px 0 rgba(0,0,0,0.4);
       letter-spacing: 4px;
+      line-height: 1;
     }
 
     .chalkboard .drink-name {
       font-family: var(--font-chalk);
       font-size: clamp(2rem, 6vw, 3rem);
       color: var(--amber);
-      margin: 4px 0;
+      margin: 6px 0 4px;
     }
 
+    /* [Typography] Switched condition text to Lora for readability */
     .chalkboard .condition {
-      font-family: var(--font-chalk);
-      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2.8vw, 1.35rem);
       color: var(--chalk-text);
-      opacity: 0.9;
-      line-height: 1.5;
-      margin-top: 8px;
+      opacity: 0.92;
+      line-height: 1.65;
+      margin-top: 10px;
     }
 
-    .chalkboard .cup { font-size: 3.5rem; margin-top: 16px; display: block; }
-
-    /* ── WHY VISIT ───────────────────────────────────────── */
-    .features {
-      background: var(--cream);
-      padding: 60px 24px;
-      text-align: center;
-    }
-
-    .features h2 {
+    /* [Offer Clarity] Added "No catch" reassurance line */
+    .chalkboard .no-catch {
       font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      color: var(--green-dark);
-      margin-bottom: 48px;
+      font-size: 0.95rem;
+      color: rgba(254,254,227,0.65);
+      margin-top: 10px;
+      font-style: italic;
     }
 
-    .features h2 span { color: var(--amber); }
+    .chalkboard .cup { font-size: 3.5rem; margin-top: 14px; display: block; }
 
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 28px;
-      justify-content: center;
-      max-width: 960px;
-      margin: 0 auto;
+    /* ── LEAD CAPTURE FORM ───────────────────────────────── */
+    .lead-form-wrap {
+      margin-top: 22px;
+      border-top: 1px dashed rgba(255,255,255,0.2);
+      padding-top: 22px;
     }
 
-    .card {
-      background: #fff;
+    /* [Typography] Switched form intro from Caveat → Lora for trust + readability */
+    .lead-form-wrap .form-intro {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: #ffc9b9;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .lead-form input {
+      display: block;
+      width: 100%;
+      padding: 14px 18px; /* [Mobile] Larger padding = easier to tap */
+      margin-bottom: 12px;
+      border-radius: 30px;
+      border: 2px solid var(--green-mid);
+      background: rgba(255,255,255,0.08);
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-size: 1.05rem; /* [Typography] Slightly larger for 50+ readability */
+      outline: none;
+      transition: border-color .2s;
+    }
+
+    .lead-form input::placeholder { color: rgba(254,254,227,0.5); }
+    .lead-form input:focus { border-color: var(--peach); }
+
+    /* [Mobile] Taller submit button for easier tapping */
+    .lead-form .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      border: none;
+      border-radius: 50px;
+      background: var(--amber);
+      color: #fff;
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1.15rem;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+      margin-top: 6px;
+    }
+
+    .lead-form .submit-btn:hover { background: #b8742e; transform: translateY(-2px); }
+
+    .confirmation-ticket {
+      background: #2a7a4b;
+      border: 2px dashed var(--peach);
       border-radius: 16px;
-      box-shadow: 0 4px 18px rgba(44,110,73,0.12);
-      border-top: 4px solid var(--green-mid);
-      padding: 36px 28px;
-      flex: 1 1 220px;
-      max-width: 260px;
-      transition: transform .2s;
-    }
-
-    .card:hover { transform: translateY(-5px); }
-
-    .card .icon { font-size: 3rem; margin-bottom: 14px; display: block; }
-
-    .card h3 {
+      padding: 28px 24px;
+      margin-top: 6px;
+      /* [Typography] Switched to Lora for better readability */
       font-family: var(--font-serif);
-      font-size: 1.25rem;
-      color: var(--green-dark);
-      margin-bottom: 10px;
+      font-size: 1.1rem;
+      color: var(--cream);
+      line-height: 1.8;
+      display: none;
     }
 
-    .card p {
+    /* [Typography] Switched form error to Open Sans */
+    .form-error {
+      color: #ff9999;
+      font-family: var(--font-body);
       font-size: 1rem;
-      color: #4a6655;
-      line-height: 1.6;
+      margin-top: 10px;
+      display: none;
     }
 
-    /* ── MENU PREVIEW ────────────────────────────────────── */
-    .menu-preview {
-      background: linear-gradient(180deg, #d8edd8 0%, #edf5e8 100%);
-      padding: 60px 24px;
+    /* ── REVIEWS GRID ────────────────────────────────────── */
+    .reviews {
+      background: var(--green-dark);
+      color: var(--chalk-text);
+      padding: 64px 24px;
       text-align: center;
     }
 
-    .menu-preview h2 {
+    .reviews h2 {
       font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      color: var(--green-dark);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: var(--peach);
       margin-bottom: 40px;
     }
 
-    .menu-grid {
-      display: flex;
-      flex-wrap: wrap;
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 20px;
-      justify-content: center;
-      max-width: 800px;
+      max-width: 880px;
       margin: 0 auto;
     }
 
-    .menu-item {
-      background: var(--chalk-bg);
-      color: var(--chalk-text);
-      border-radius: 12px;
-      padding: 20px 28px;
-      min-width: 200px;
-      flex: 1 1 200px;
-      max-width: 240px;
-      font-family: var(--font-chalk);
+    .review-card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: left;
     }
 
-    .menu-item .emoji { font-size: 2.2rem; display: block; margin-bottom: 8px; }
-    .menu-item .name  { font-size: 1.4rem; color: var(--peach); }
-    .menu-item .price { font-size: 1.1rem; color: var(--amber); margin-top: 4px; }
-
-    /* ── TESTIMONIAL ─────────────────────────────────────── */
-    .testimonial {
-      background: var(--green-dark);
-      color: var(--chalk-text);
-      padding: 60px 24px;
-      text-align: center;
-    }
-
-    .testimonial blockquote {
+    .review-card blockquote {
       font-family: var(--font-serif);
-      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      font-size: 1rem;
       font-style: italic;
-      max-width: 640px;
-      margin: 0 auto 20px;
-      line-height: 1.7;
-      opacity: 0.95;
+      line-height: 1.75;
+      opacity: 0.92;
+      margin-bottom: 16px;
     }
 
-    .testimonial cite {
+    /* Caveat OK here — short attribution line, decorative accent */
+    .review-card cite {
       font-family: var(--font-chalk);
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       color: var(--peach);
+    }
+
+    @media (max-width: 640px) {
+      .reviews-grid { grid-template-columns: 1fr; }
     }
 
     /* ── LOCATION / CTA ──────────────────────────────────── */
     .location {
       background: #edf5e8;
-      padding: 60px 24px;
+      padding: 64px 24px;
       text-align: center;
     }
 
@@ -319,14 +486,24 @@
       white-space: nowrap;
     }
 
-    .location-info { padding: 28px 32px; }
+    .location-info { padding: 28px 32px 32px; }
 
     .location-info .address {
       font-family: var(--font-serif);
       font-size: 1.25rem;
       color: var(--green-dark);
       line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    /* [Trust] Added convenience line below address */
+    .location-convenience {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      color: var(--green-mid);
+      font-style: italic;
       margin-bottom: 20px;
+      line-height: 1.6;
     }
 
     .location-info .hours {
@@ -348,7 +525,7 @@
       font-family: var(--font-serif);
       font-weight: 700;
       font-size: 1.3rem;
-      padding: 16px;
+      padding: 18px; /* [Mobile] Larger tap target */
       border-radius: 50px;
       text-decoration: none;
       margin-bottom: 12px;
@@ -364,7 +541,7 @@
       font-family: var(--font-serif);
       font-weight: 700;
       font-size: 1.3rem;
-      padding: 16px;
+      padding: 18px; /* [Mobile] Larger tap target */
       border-radius: 50px;
       text-decoration: none;
       margin-bottom: 12px;
@@ -380,7 +557,7 @@
       font-family: var(--font-serif);
       font-weight: 600;
       font-size: 1.1rem;
-      padding: 14px;
+      padding: 16px;
       border-radius: 50px;
       text-decoration: none;
       transition: background .2s;
@@ -389,13 +566,14 @@
     .directions-btn:hover { background: #b8742e; }
 
     /* ── FOOTER ──────────────────────────────────────────── */
+    /* [Typography] Switched footer from Caveat → Open Sans for readability */
     footer {
       background: var(--green-dark);
       color: var(--peach);
       text-align: center;
       padding: 28px 24px;
-      font-family: var(--font-chalk);
-      font-size: 1.1rem;
+      font-family: var(--font-body);
+      font-size: 1rem;
       line-height: 1.8;
     }
 
@@ -418,7 +596,7 @@
       flex: 1;
       max-width: 240px;
       text-align: center;
-      padding: 12px;
+      padding: 14px; /* [Mobile] Slightly larger */
       border-radius: 40px;
       font-family: var(--font-serif);
       font-weight: 700;
@@ -430,132 +608,13 @@
     .sticky-bar .call  { background: var(--green-mid); }
     .sticky-bar .visit { background: var(--amber); }
 
-    body { padding-bottom: 74px; }
+    body { padding-bottom: 76px; }
 
     @media (max-width: 480px) {
-      .chalkboard { padding: 36px 24px; }
+      .chalkboard { padding: 36px 20px; }
+      .location-info { padding: 24px 20px 28px; }
       .location-info .hours { grid-template-columns: 1fr; }
-    }
-
-    /* ── REVIEWS GRID ────────────────────────────────────── */
-    .reviews {
-      background: var(--green-dark);
-      color: var(--chalk-text);
-      padding: 60px 24px;
-      text-align: center;
-    }
-
-    .reviews h2 {
-      font-family: var(--font-serif);
-      font-size: clamp(1.6rem, 4vw, 2.2rem);
-      color: var(--peach);
-      margin-bottom: 40px;
-    }
-
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      max-width: 880px;
-      margin: 0 auto;
-    }
-
-    .review-card {
-      background: rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 28px 24px;
-      text-align: left;
-    }
-
-    .review-card blockquote {
-      font-family: var(--font-serif);
-      font-size: 1rem;
-      font-style: italic;
-      line-height: 1.7;
-      opacity: 0.92;
-      margin-bottom: 16px;
-    }
-
-    .review-card cite {
-      font-family: var(--font-chalk);
-      font-size: 1.1rem;
-      color: var(--peach);
-    }
-
-    @media (max-width: 640px) {
-      .reviews-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ── LEAD CAPTURE FORM ───────────────────────────────── */
-    .lead-form-wrap {
-      margin-top: 20px;
-      border-top: 1px dashed rgba(255,255,255,0.2);
-      padding-top: 20px;
-    }
-
-    .lead-form-wrap .form-intro {
-      font-family: 'Caveat', cursive;
-      font-size: 1.15rem;
-      color: #ffc9b9;
-      line-height: 1.5;
-      margin-bottom: 18px;
-    }
-
-    .lead-form input {
-      display: block;
-      width: 100%;
-      padding: 12px 16px;
-      margin-bottom: 10px;
-      border-radius: 30px;
-      border: 2px solid var(--green-mid);
-      background: rgba(255,255,255,0.08);
-      color: var(--cream);
-      font-family: var(--font-body);
-      font-size: 1rem;
-      outline: none;
-      transition: border-color .2s;
-    }
-
-    .lead-form input::placeholder { color: rgba(254,254,227,0.5); }
-    .lead-form input:focus { border-color: var(--peach); }
-
-    .lead-form .submit-btn {
-      display: block;
-      width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 50px;
-      background: var(--amber);
-      color: #fff;
-      font-family: var(--font-serif);
-      font-weight: 700;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: background .2s;
-      margin-top: 4px;
-    }
-
-    .lead-form .submit-btn:hover { background: #b8742e; }
-
-    .confirmation-ticket {
-      background: #2a7a4b;
-      border: 2px dashed var(--peach);
-      border-radius: 16px;
-      padding: 24px 20px;
-      margin-top: 4px;
-      font-family: var(--font-chalk);
-      font-size: 1.25rem;
-      color: var(--cream);
-      line-height: 1.7;
-      display: none;
-    }
-
-    .form-error {
-      color: #ff9999;
-      font-family: var(--font-chalk);
-      font-size: 1rem;
-      margin-top: 8px;
-      display: none;
+      .lead-form input { padding: 16px 18px; } /* [Mobile] Even more comfortable on small screens */
     }
   </style>
 </head>
@@ -566,18 +625,75 @@
     <div class="hero-badge">🌿 Homemade Taste, Every Day</div>
     <h1>Your favorite <span>coffee & sandwich</span> are waiting for you</h1>
     <p>Come relax, enjoy a warm café con leche and a sandwich made with love — just like home.</p>
-    <a href="#location" class="hero-cta">📍 How to Get Here</a>
+    <a href="#offer" class="hero-cta">☕ Claim Your Free Coffee</a>
+    <!-- [Trust] Added trust signals below CTA -->
+    <div class="trust-signals">
+      <span>✔ Easy parking</span>
+      <span>✔ Quick, friendly service</span>
+      <span>✔ Family-owned local café</span>
+    </div>
+  </section>
+
+  <!-- ── FOOD PHOTOS ────────────────────────────────────── -->
+  <!-- [Structure] Moved food section BEFORE the promo offer -->
+  <section class="features">
+    <h2>The <span>crowd</span> favorites</h2>
+    <!-- [Typography] Added subtitle for context -->
+    <p class="features-subtitle">Fresh-made every morning. Come try them for yourself.</p>
+    <div class="food-grid">
+
+      <div class="food-card">
+        <img src="Promo_Tripleta_sandwich.jpeg" alt="Tripleta Sandwich at Grace Cafe" />
+        <div class="food-card-body">
+          <h3>La Tripleta</h3>
+          <p>Puerto Rico's most beloved sandwich — three tender meats, perfectly seasoned, piled high on fresh-baked bread. One bite and you'll understand.</p>
+        </div>
+      </div>
+
+      <div class="food-card">
+        <img src="Promo_Cuban_sandwich.jpeg" alt="Cuban Sandwich at Grace Cafe" />
+        <div class="food-card-body">
+          <h3>Cuban Sandwich</h3>
+          <p>Pressed golden and crispy, loaded with slow-roasted pork and ham on authentic La Segunda bread. Classic done right.</p>
+        </div>
+      </div>
+
+      <div class="food-card">
+        <img src="Promo_cafeconleche.jpeg" alt="Café con Leche at Grace Cafe" />
+        <div class="food-card-body">
+          <h3>Café con Leche</h3>
+          <p>Rich, creamy, and made fresh to order. The perfect reason to start your morning — just like grandma used to make it.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SECONDARY CTA BANNER ───────────────────────────── -->
+  <!-- [Structure] After seeing the food, the offer lands here with more impact -->
+  <section class="secondary-cta">
+    <p class="pre-line">Looks good, right?</p>
+    <h3>Your first Café con Leche is <span>completely free</span> with any sandwich — on your first visit.</h3>
+    <a href="#offer" class="secondary-cta-btn">☕ Claim My Free Coffee</a>
   </section>
 
   <!-- ── CHALKBOARD PROMO ───────────────────────────────── -->
-  <section class="promo-wrap">
+  <!-- [Structure] Promo now comes AFTER food section -->
+  <section class="promo-wrap" id="offer">
     <div class="chalkboard">
       <div class="free">FREE!</div>
       <div class="drink-name">Café con Leche</div>
-      <div class="condition">with the purchase of any sandwich<br><span style="font-size:1rem; opacity:0.75;">on your first visit</span></div>
+      <!-- [Offer Clarity] Switched condition to Lora, made "first visit" more prominent -->
+      <div class="condition">
+        with the purchase of any sandwich<br>
+        <strong style="color:var(--peach); font-size:1.1em;">on your first visit</strong>
+      </div>
+      <!-- [Offer Clarity] Added "No catch" reassurance -->
+      <p class="no-catch">No catch. No app. Just great coffee.</p>
       <span class="cup">☕</span>
       <div class="lead-form-wrap">
-        <p class="form-intro">Claim your free Café con Leche — enter your info and show the confirmation screen to the cashier on your first visit.</p>
+        <!-- [Typography] form-intro now uses Lora -->
+        <p class="form-intro">Enter your info below and show the confirmation screen to the cashier on your first visit to redeem your free Café con Leche.</p>
         <form class="lead-form" id="claimForm">
           <input type="text" id="firstName" placeholder="Your first name" />
           <input type="email" id="email" placeholder="Your email address" />
@@ -586,47 +702,6 @@
           <p class="form-error" id="formError">Something went wrong. Please try again.</p>
         </form>
         <div class="confirmation-ticket" id="confirmationTicket"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── WHY VISIT ──────────────────────────────────────── -->
-  <section class="features">
-    <h2>A <span>special</span> place just for you</h2>
-    <div class="cards">
-      <div class="card">
-        <span class="icon">🤝</span>
-        <h3>Personal Service</h3>
-        <p>Our staff will take care of you with patience and warmth — like family.</p>
-      </div>
-      <div class="card">
-        <span class="icon">🪑</span>
-        <h3>Peaceful Atmosphere</h3>
-        <p>Comfortable seating, good lighting, and soft music. A space made for relaxing.</p>
-      </div>
-      <div class="card">
-        <span class="icon">🥪</span>
-        <h3>Authentic Flavors</h3>
-        <p>Cuban sandwiches, tripletas and more — made fresh with quality ingredients every day.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── MENU PREVIEW ───────────────────────────────────── -->
-  <section class="menu-preview">
-    <h2>Some of our favorites</h2>
-    <div class="menu-grid">
-      <div class="menu-item">
-        <span class="emoji">🥪</span>
-        <div class="name">Cuban Sandwich</div>
-      </div>
-      <div class="menu-item">
-        <span class="emoji">🥖</span>
-        <div class="name">Tripleta Sandwich</div>
-      </div>
-      <div class="menu-item">
-        <span class="emoji">☕</span>
-        <div class="name">Café con Leche</div>
       </div>
     </div>
   </section>
@@ -667,6 +742,8 @@
           <strong>407 N. West St.</strong><br>
           Bushnell, FL 33513
         </div>
+        <!-- [Trust] Added convenience line for The Villages audience -->
+        <p class="location-convenience">Only ~18 min from The Villages · Free parking right outside · No stress, easy access</p>
         <div class="hours">
           <strong>Monday – Friday</strong> <span>8:00 am – 3:00 pm</span>
           <strong>Saturday – Sunday</strong> <span>Closed</span>
@@ -681,18 +758,17 @@
   <!-- ── FOOTER ─────────────────────────────────────────── -->
   <footer>
     <div>☕ Grace Cafe — Sandwich &amp; Coffee · Bushnell, FL</div>
-    <div style="margin-top:6px; font-size:0.95rem; opacity:0.75;">
+    <div style="margin-top:6px; font-size:0.9rem; opacity:0.7;">
       Made with love for our community &hearts;
     </div>
   </footer>
 
   <!-- ── STICKY BOTTOM BAR ──────────────────────────────── -->
   <div class="sticky-bar">
-    <a href="tel:+13526032833"                                         class="call">📞 Call Now</a>
+    <a href="tel:+13526032833" class="call">📞 Call Now</a>
     <a href="https://www.google.com/maps/search/Grace+Cafe+407+N+West+St+Bushnell+FL+33513"
-       target="_blank"                                                 class="visit">📍 Get Directions</a>
+       target="_blank" class="visit">📍 Get Directions</a>
   </div>
-
 
   <script>
     document.getElementById('claimForm').addEventListener('submit', async function(e) {
