@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Grace Cafe — Sandwich & Coffee | Bushnell, FL</title>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Lora:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Lora:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Lora:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"></noscript>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -643,7 +646,10 @@
     <div class="food-grid">
 
       <div class="food-card">
-        <img src="Promo_Tripleta_sandwich.jpeg" alt="Tripleta Sandwich at Grace Cafe" />
+        <picture>
+          <source srcset="Promo_Tripleta_sandwich.webp" type="image/webp">
+          <img src="Promo_Tripleta_sandwich.jpeg" alt="Tripleta Sandwich at Grace Cafe" width="600" height="600" loading="lazy" decoding="async">
+        </picture>
         <div class="food-card-body">
           <h3>La Tripleta</h3>
           <p>Puerto Rico's most beloved sandwich — three tender meats, perfectly seasoned, piled high on fresh-baked bread. One bite and you'll understand.</p>
@@ -651,7 +657,10 @@
       </div>
 
       <div class="food-card">
-        <img src="Promo_Cuban_sandwich.jpeg" alt="Cuban Sandwich at Grace Cafe" />
+        <picture>
+          <source srcset="Promo_Cuban_sandwich.webp" type="image/webp">
+          <img src="Promo_Cuban_sandwich.jpeg" alt="Cuban Sandwich at Grace Cafe" width="600" height="600" loading="lazy" decoding="async">
+        </picture>
         <div class="food-card-body">
           <h3>Cuban Sandwich</h3>
           <p>Pressed golden and crispy, loaded with slow-roasted pork and ham on authentic La Segunda bread. Classic done right.</p>
@@ -659,7 +668,10 @@
       </div>
 
       <div class="food-card">
-        <img src="Promo_cafeconleche.jpeg" alt="Café con Leche at Grace Cafe" />
+        <picture>
+          <source srcset="Promo_cafeconleche.webp" type="image/webp">
+          <img src="Promo_cafeconleche.jpeg" alt="Café con Leche at Grace Cafe" width="600" height="600" loading="lazy" decoding="async">
+        </picture>
         <div class="food-card-body">
           <h3>Café con Leche</h3>
           <p>Rich, creamy, and made fresh to order. The perfect reason to start your morning — just like grandma used to make it.</p>
